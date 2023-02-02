@@ -1,1 +1,1 @@
-# PennyPence-frontend
+# pennypence-react-frontend

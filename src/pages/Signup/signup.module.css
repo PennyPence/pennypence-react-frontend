@@ -5,27 +5,3 @@
     position: relative;
     overflow: hidden;
 }
-
-.signup-page__sky {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: moveStar 120s linear infinite;
-}
-
-.signup-page__sky__star {
-    fill: #fff;
-    stroke: none;
-    stroke-width: 0;
-}
-
-/* 별 이동효과 */
-@keyframes moveStar {
-    from {
-        transform: translate(-50%) rotate(0);
-    }
-
-    to {
-        transform: translate(-50%) rotate(360deg);
-    }
-}

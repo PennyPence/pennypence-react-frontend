@@ -1,0 +1,27 @@
+a {
+    text-decoration: none;
+}
+
+.start-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(28, 112, 185, 1), rgba(41, 37, 114, 1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-page__logo {
+    width: 320px;
+    height: auto;
+}
+
+.start-page__content {
+    font-size: 20px;
+    font-weight: 600;
+    color:black;
+    text-decoration: none;
+}

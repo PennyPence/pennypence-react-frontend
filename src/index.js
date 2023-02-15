@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import GameStart from './pages/GameStart/gamestart';
 import { SignupPage } from './pages/Signup/signup';
 import StartPage from './pages/StartPage/start';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -13,6 +13,7 @@ root.render(
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="signup" element={<SignupPage />} />
+        <Route path="start" element={<GameStart />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

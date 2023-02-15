@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+    color: black;
+}
 .signup-page {
     width: 100vw;
     height: 100vh;

@@ -3,6 +3,7 @@ import MakeStar from "../../hoc/makestar/makestar";
 import logoImage from "../../assets/images/logo.png";
 import upArrow from "../../assets/images/uparrow.png";
 import downArrow from "../../assets/images/downarrow.png";
+import NavBar from "../../components/navbar";
 // <a href="https://www.flaticon.com/kr/free-icons/-" title="위쪽 화살표 아이콘">위쪽 화살표 아이콘  제작자: Creative Stall Premium - Flaticon</a>
 function BasicInfo(prob) {
     return (
@@ -18,6 +19,7 @@ function BasicInfo(prob) {
                 <span className={style[`basicinfo-page__contentsbox__middle`]}>어제보다 <span className={style[`basicinfo-page__contentsbox__increase`]}>3%</span></span>
                 <span className={style[`basicinfo-page__contentsbox__middle`]}>자산이 증가했어요</span>
             </div>
+            <NavBar />
         </section>
     );
 }

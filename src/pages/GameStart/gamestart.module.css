@@ -11,7 +11,6 @@ a {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    z-index: -3;
 }
 
 .gamestart-page__title {

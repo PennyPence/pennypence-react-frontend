@@ -13,7 +13,7 @@ function BasicInfo(prob) {
             <span className={style[`basicinfo-page__title`]}>안녕하세요😊</span>
             <img src={logoImage} className={style[`basicinfo-page__user`]} alt="userImage" />
             <div className={style[`basicinfo-page__contentsbox`]}>
-                {prob.info ? <img src={upArrow} className={style[`basicinfo-page__contentsbox__image`]} alt="upArrow" /> : <img src={downArrow} className={style[`basicinfo-page__contentsbox__image`]} alt="" /> }
+                {prob.info ? <img src={downArrow} className={style[`basicinfo-page__contentsbox__image`]} alt="" /> : <img src={upArrow} className={style[`basicinfo-page__contentsbox__image`]} alt="upArrow" />  }
                 <span className={style[`basicinfo-page__contentsbox__small`]}>총 자산</span>
                 <span className={style[`basicinfo-page__contentsbox__big`]}>10,000원</span>
                 <span className={style[`basicinfo-page__contentsbox__middle`]}>어제보다 <span className={style[`basicinfo-page__contentsbox__increase`]}>3%</span></span>

@@ -17,7 +17,6 @@ root.render(
         <Route path="signup" element={<SignupPage />} />
         <Route path="start" element={<GameStart />} />
         <Route path="basic" element={<BasicInfo />} />
-        <Route path="navbar" element={<NavBar />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

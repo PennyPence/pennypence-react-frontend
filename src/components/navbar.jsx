@@ -15,7 +15,6 @@ import { useState } from "react";
 function NavBar() {
     const [isContain, setisContain] = useState("0");
     function onClickhandle(e) {
-        console.log(e.target.id);
         setisContain(e.target.id);
     }
     return (

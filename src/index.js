@@ -6,7 +6,8 @@ import { SignupPage } from './pages/Signup/signup';
 import StartPage from './pages/StartPage/start';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BasicInfo from './pages/BasicInfo/basicinfo';
-import InitNews from './pages/News_init/news_init';
+import InitNews from './pages/NewsInit/newsinit';
+import NewsDetailPage from './pages/NewsDetail/newsdetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path="start" element={<GameStart />} />
         <Route path="basic" element={<BasicInfo />} />
         <Route path="news" element={<InitNews />} />
+        <Route path="newsdetail" element={<NewsDetailPage />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

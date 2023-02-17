@@ -1,5 +1,5 @@
 import MakeStar from "../../hoc/makestar/makestar";
-import style from "./news_init.module.css"
+import style from "./newsinit.module.css"
 import NavBar from "../../components/navbar";
 
 function InitNews() {

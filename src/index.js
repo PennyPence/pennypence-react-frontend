@@ -6,6 +6,7 @@ import { SignupPage } from './pages/Signup/signup';
 import StartPage from './pages/StartPage/start';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BasicInfo from './pages/BasicInfo/basicinfo';
+import InitNews from './pages/News_init/news_init';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <Route path="signup" element={<SignupPage />} />
         <Route path="start" element={<GameStart />} />
         <Route path="basic" element={<BasicInfo />} />
+        <Route path="news" element={<InitNews />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

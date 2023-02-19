@@ -1,0 +1,183 @@
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.newtab-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(28, 112, 185, 1), rgba(41, 37, 114, 1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.newtab-page__tabs {
+    display: flex;
+    width: 390px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.newtab-page__tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-menu {
+    width: max-content;
+    white-space: nowrap;
+    height: auto;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    list-style: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .4);
+    padding: .5rem 1.3rem;
+    margin: 0 1rem;
+    z-index: 1;
+}
+
+.tab-menu:nth-child(1) {
+    color: #CEE2FF;
+}
+
+.tab-menu:nth-child(2) {
+    color: #ECFFED;
+}
+
+.tab-menu:nth-child(3) {
+    color: #DDD1FF;
+}
+
+.tab-menu:nth-child(4) {
+    color: #FFF2C2;
+}
+
+.tab-menu:nth-child(5) {
+    color: #FFDADA
+}
+
+.tab-menu:nth-child(6) {
+    color: #FFD7E5
+}
+
+.tab-menu__active {
+    width: max-content;
+    white-space: nowrap;
+    height: auto;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: .5rem 0;
+    list-style: none;
+    text-align: center;
+    padding: .5rem 1.3rem;
+    background-color: rgba(255, 187, 12, 0.17);
+    margin: 0 1rem;
+    color: white;
+}
+
+.newtab-page__header {
+    width: 350px;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .5rem;
+    align-items: center;
+}
+
+.newtab-page__header__title__0 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #CEE2FF;
+}
+
+.newtab-page__header__title__1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ECFFED;
+}
+
+.newtab-page__header__title__2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #DDD1FF;
+}
+
+.newtab-page__header__title__3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF2C2;
+}
+
+.newtab-page__header__title__4 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFDADA
+}
+
+.newtab-page__header__title__5 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFD7E5
+}
+
+
+.newtab-page__header__invest {
+    font-size: 15px;
+    color: white;
+}
+
+.newtab-page__body {
+    width: 300px;
+    height: 400px;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .15);
+    border-radius: 20px;
+}
+
+.newtab-page__body__title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    height: 100px;
+}
+
+.newtab-page__body__title__text {
+    font-size: 25px;
+    color: #FFBA52;
+    width: 70%;
+}
+
+.newtab-page__body__title__image {
+    width: 30%;
+}
+
+.newtab-page__body__contents {
+    width: 100%;
+    height: 300px;
+    color: white;
+}
+
+.newtab-page__footer {
+    width: 300px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .15);
+    padding: 1rem;
+}
+
+.newtab-page__footer__content {
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}

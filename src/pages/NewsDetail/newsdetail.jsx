@@ -9,7 +9,7 @@ function NewsDetailPage(prob) {
     const tabContentArr = [
         {
             tabTitle : (
-                <li onClick={() => tabHandleer(0)} className={activeIndex===0 ? style[`tab-menu__active`] : style[`tab-menu`]}> 최신순 </li>
+                <li onClick={() => tabHandler(0)} className={activeIndex===0 ? style[`tab-menu__active`] : style[`tab-menu`]}> 최신순 </li>
             ),
             tabContent : (
                 <>
@@ -55,7 +55,7 @@ function NewsDetailPage(prob) {
         },
         {
             tabTitle:(
-                <li onClick={() => tabHandleer(1)} className={activeIndex===1 ? style[`tab-menu__active`] : style[`tab-menu`]}> 일자순 </li>
+                <li onClick={() => tabHandler(1)} className={activeIndex===1 ? style[`tab-menu__active`] : style[`tab-menu`]}> 일자순 </li>
             ),
             tabContent:(
                 <>
@@ -101,7 +101,7 @@ function NewsDetailPage(prob) {
         }
     ];
 
-    const tabHandleer = (index) => {
+    const tabHandler = (index) => {
         setActiveIndex(index)
     }
 

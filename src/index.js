@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BasicInfo from './pages/BasicInfo/basicinfo';
 import InitNews from './pages/NewsInit/newsinit';
 import NewsDetailPage from './pages/NewsDetail/newsdetail';
+import NewsTab from './pages/NewsTab/newstab';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="basic" element={<BasicInfo />} />
         <Route path="news" element={<InitNews />} />
         <Route path="newsdetail" element={<NewsDetailPage />} />
+        <Route path="newstab" element={<NewsTab />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

@@ -26,7 +26,6 @@ function NavBar({basicPos}) {
         // 위치가 랭킹이면 4가 활성화
         basicPos==="ranking" ? "4" : ""
         : "");
-    console.log(basicPos);
     function onClickhandle(e) {
         setisContain(e.target.id);
     }

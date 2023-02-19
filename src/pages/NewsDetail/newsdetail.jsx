@@ -4,7 +4,7 @@ import NavBar from "../../components/navbar"
 import testImage from "../../assets/images/logo.png"
 import { useState } from "react"
 
-function NewsDetailPage() {
+function NewsDetailPage(prob) {
     const [activeIndex, setActiveIndex] = useState(0);
     const tabContentArr = [
         {
@@ -114,7 +114,7 @@ function NewsDetailPage() {
             })}
         </ul>
         { tabContentArr[activeIndex].tabContent };
-        <NavBar />
+        <NavBar basicContain={prob.basicContain}/>
         </section>
     );
 }

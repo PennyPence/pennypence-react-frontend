@@ -15,7 +15,7 @@ function MakeStar() {
     const randomRadius = () => Math.random() * 0.5 + 0.6;
     // 임의의 값
     const _size = Math.floor(maxSize / 2);
-    const htmlDummy = new Array(_size).fill().map((_, i) => { return <circle className={style.star} cx={getRandomX()} cy={getRandomY()} r={randomRadius()}/>});
+    const htmlDummy = new Array(_size).fill().map((_, i) => { return <circle key={i} className={style.star} cx={getRandomX()} cy={getRandomY()} r={randomRadius()}/>});
     useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => {

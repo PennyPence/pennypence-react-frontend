@@ -19,7 +19,7 @@ function BasicInfo(prob) {
                 <span className={style[`basicinfo-page__contentsbox__middle`]}>어제보다 <span className={style[`basicinfo-page__contentsbox__increase`]}>3%</span></span>
                 <span className={style[`basicinfo-page__contentsbox__middle`]}>자산이 증가했어요</span>
             </div>
-            <NavBar />
+            <NavBar basicPos="home"/>
         </section>
     );
 }

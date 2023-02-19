@@ -38,7 +38,7 @@ function InitNews() {
                     </div>
                 </a>
             </div>
-            <NavBar />
+            <NavBar basicPos="news"/>
         </section>
     );
 }

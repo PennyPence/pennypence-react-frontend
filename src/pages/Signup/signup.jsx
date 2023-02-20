@@ -8,9 +8,9 @@ function SignupPage(prob) {
     return (
         <section className={style[`signup-page`]}>
             <MakeStar />
-            <Link to="/start">
-                <SignupBtn content="회원가입"/>
-            </Link>
+            {/* <Link to="/start"> */}
+            <SignupBtn content="Kakao로 계속하기" />
+            {/* </Link> */}
         </section>
     );
 }

@@ -1,0 +1,98 @@
+.invest-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(28, 112, 185, 1), rgba(41, 37, 114, 1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.invest-page__header {
+    width: 390px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    z-index: 1;
+    padding-left: 1rem;
+}
+
+.invest-page__header__text {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.invest-page__body {
+    width: 390px;
+    z-index: 1;
+}
+
+.invest-page__body__title {
+    display: flex;
+    width: 100%;
+    padding: .5rem;
+}
+
+.invest-page__body__title__image {
+    width: 100px;
+    height: 100px;
+}
+
+.invest-page__body__title__content {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding: 0 .5rem;
+    line-height: 2.2rem;
+}
+
+.invest-page__body__title__content__text:nth-child(1) {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.invest-page__body__title__content__text:nth-child(2) {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.invest-page__body__title__content__text:nth-child(3) {
+    font-weight: bold;
+    color: rgba(225, 82, 66, 1);
+}
+
+.invest-page__body__title__button {
+    width: 100px;
+    margin: 2rem .5rem;
+    background-color: rgba(251, 255, 72, 0.5);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: .5rem 0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, .4);
+}
+
+.invest-page__body__article {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.invest-page__body__graph {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}

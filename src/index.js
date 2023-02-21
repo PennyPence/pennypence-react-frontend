@@ -11,6 +11,7 @@ import NewsDetailPage from './pages/NewsDetail/newsdetail';
 import NewsTab from './pages/NewsTab/newstab';
 import InvestPage from './pages/InvestPage/investpage';
 import KaKaoAuth from './pages/Signup/kakao';
+import RankingPage from './pages/Ranking/ranking';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
         <Route path="newstab" element={<NewsTab />} />
         <Route path="investpage" element={<InvestPage />} />
         <Route path="oauth/kakao/callback/" element={<KaKaoAuth />} />
+        <Route path="ranking" element={<RankingPage />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

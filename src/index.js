@@ -34,7 +34,7 @@ root.render(
           <Route path="oauth/kakao/callback/" element={<KaKaoAuth />} />
           <Route path="ranking" element={<RankingPage />} />
           <Route path="community" element={<CommunityPage />} />
-          <Route path="communitydetail" element={<CommunityDetailPage />} />
+          <Route path="community/:id" element={<CommunityDetailPage />} />
         </Routes>
       </React.StrictMode>
     </BrowserRouter>

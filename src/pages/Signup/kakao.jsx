@@ -10,6 +10,7 @@ var baseURL = process.env.REACT_APP_BACK_BASE_URL
 const KaKaoAuth = () => {
     const dispatch = useDispatch();
     const code = new URL(window.location.href).searchParams.get('code');
+    let navigate = useNavigate();
     useEffect(() => {
         console.log(code)
         axios({
@@ -19,27 +20,19 @@ const KaKaoAuth = () => {
             .then((res) => {
                 console.log(res.data.user)
                 if (res.status === 200) {
-                    dispatch(loginUser({id: res.data.user.id, access_token: res.data.access_token, refresh_token: res.data.refresh_token }));
+                    dispatch(loginUser({ ...res.data.user, access_token: res.data.access_token, refresh_token: res.data.refresh_token }));
                 }
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.access_token}`
                 localStorage.setItem('Authorization', `Bearer ${res.data.access_token}`)
-                console.log("여기");
-                // setTimeout(() => toast.success("정상적으로 로그인이 되었습니다."), 200);
-                // navigate('/news')
+                // setTimeout(() => <h1>Loading...</h1>, 200);
+                navigate("/");
             })
     }, [])
-
-
     return (
         <>
-            <p>1111</p>
-            {/* <Toaster
-                position="top-center"
-                reverseOrder={false}
-            />
-            <Spinner animation="border" /> */}
+        <h1>Loading...</h1>
         </>
-    )
+    );
 }
 
 export default KaKaoAuth

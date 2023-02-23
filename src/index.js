@@ -12,23 +12,27 @@ import NewsTab from './pages/NewsTab/newstab';
 import InvestPage from './pages/InvestPage/investpage';
 import KaKaoAuth from './pages/Signup/kakao';
 import RankingPage from './pages/Ranking/ranking';
+import store from './store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="signup" element={<SignupPage />} />
-        <Route path="start" element={<GameStart />} />
-        <Route path="basic" element={<BasicInfo />} />
-        <Route path="news" element={<InitNews />} />
-        <Route path="newsdetail" element={<NewsDetailPage />} />
-        <Route path="newstab" element={<NewsTab />} />
-        <Route path="investpage" element={<InvestPage />} />
-        <Route path="oauth/kakao/callback/" element={<KaKaoAuth />} />
-        <Route path="ranking" element={<RankingPage />} />
-      </Routes>
-    </React.StrictMode>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="signup" element={<SignupPage />} />
+          <Route path="start" element={<GameStart />} />
+          <Route path="basic" element={<BasicInfo />} />
+          <Route path="news" element={<InitNews />} />
+          <Route path="newsdetail" element={<NewsDetailPage />} />
+          <Route path="newstab" element={<NewsTab />} />
+          <Route path="investpage" element={<InvestPage />} />
+          <Route path="oauth/kakao/callback/" element={<KaKaoAuth />} />
+          <Route path="ranking" element={<RankingPage />} />
+        </Routes>
+      </React.StrictMode>
+    </BrowserRouter>
+  </Provider>
 );

@@ -1,25 +1,27 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import user from "./store/userSlice";
-import { persistReducer } from "redux-persist"
+import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const reducers = combineReducers({
-    user: user.reducer,
+const rootReducer = combineReducers({
+    user: user.reducer
 });
 
 const persistConfig = {
     key: "root",
-    // localStorage에 저장합니다.
+    // sessionStorage 저장합니다.
     storage,
-    // auth, board, studio 3개의 reducer 중에 auth reducer만 localstorage에 저장
+    // user 만 저장
     whitelist: ["user"]
     // blacklist -> 그것만 제외합니다
 };
 
-const persist = persistReducer(persistConfig, reducers)
+const persist = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
-    reducer: persist
+    reducer: persist,
 })
 
-export default store;
+const persistor = persistStore(store)
+
+export { store, persistor };

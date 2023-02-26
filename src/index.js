@@ -17,8 +17,12 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import CommunityPage from './pages/Community/community';
 import CommunityDetailPage from './pages/CommunityDetail/communitydetail';
+import axios from 'axios';
+import user from './store/userSlice';
+import StoveList from './pages/Stove/stove';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+axios.defaults.headers.common['Authorization'] = `Bearer ${user.access_token}`
 root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
@@ -37,6 +41,7 @@ root.render(
             <Route path="ranking" element={<RankingPage />} />
             <Route path="community" element={<CommunityPage />} />
             <Route path="community/:id" element={<CommunityDetailPage />} />
+            <Route path="stove" element={<StoveList />} />
           </Routes>
         </React.StrictMode>
       </BrowserRouter>

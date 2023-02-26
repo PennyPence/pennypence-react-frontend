@@ -1,0 +1,65 @@
+.stove-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(28, 112, 185, 1), rgba(41, 37, 114, 1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.stove-page__frame {
+    width: 80vw;
+    height: 75vh;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+.stove-page__frame__item {
+    width: 85%;
+    height: 7vh;
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stove-page__frame__add {
+    width: 40%;
+    height: 5vh;
+    background-color: rgba(251, 255, 72, 0.5);
+    border-radius: 15px;
+    border: none;
+}
+
+.stove-page__frame__add__title {
+    font-size: 4vw;
+    font-weight: bold;
+    color: white;
+}
+
+.stove-page__frame__item__image {
+    width: 15%;
+    padding-left: 1rem;
+}
+
+.stove-page__frame__item__text {
+    color: white;
+}
+
+.stove-page__frame__item__button {
+    margin-right: 1rem;
+    border-radius: 20px;
+    padding: .8rem;
+    border: none;
+    background-color: rgba(72, 167, 255, 0.2);
+    color: white;
+}

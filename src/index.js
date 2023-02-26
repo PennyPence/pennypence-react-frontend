@@ -21,6 +21,9 @@ import QuestionPage from './pages/Question/question';
 import QuestionDetailPage from './pages/QuestionDetail/questiondetail';
 import MakeStar from './hoc/makestar/makestar';
 import NavBar from './components/navbar';
+import user from './store/userSlice';
+import StoveList from './pages/Stove/stove';
+import StoveDetail from './pages/StoveDetail/stovedetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const styles = {
@@ -58,6 +61,8 @@ root.render(
               <Route path="article/:id" element={<ArticleDetailPage />} />
               <Route path="question" element={<QuestionPage />} />
               <Route path="question/:id" element={<QuestionDetailPage />} />
+              <Route path="stove" element={<StoveList />} />
+              <Route path="stovedetail" element={<StoveDetail />} />
             </Routes>
             <NavBar />
           </div>

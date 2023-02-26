@@ -25,7 +25,7 @@ const KaKaoAuth = () => {
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.access_token}`
                 localStorage.setItem('Authorization', `Bearer ${res.data.access_token}`)
                 // setTimeout(() => <h1>Loading...</h1>, 200);
-                navigate("/");
+                navigate("/community");
             })
     }, [])
     return (

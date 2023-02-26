@@ -20,6 +20,7 @@ import CommunityDetailPage from './pages/CommunityDetail/communitydetail';
 import axios from 'axios';
 import user from './store/userSlice';
 import StoveList from './pages/Stove/stove';
+import StoveDetail from './pages/StoveDetail/stovedetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 axios.defaults.headers.common['Authorization'] = `Bearer ${user.access_token}`
@@ -42,6 +43,7 @@ root.render(
             <Route path="community" element={<CommunityPage />} />
             <Route path="community/:id" element={<CommunityDetailPage />} />
             <Route path="stove" element={<StoveList />} />
+            <Route path="stovedetail" element={<StoveDetail />} />
           </Routes>
         </React.StrictMode>
       </BrowserRouter>

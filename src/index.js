@@ -15,36 +15,57 @@ import RankingPage from './pages/Ranking/ranking';
 import { persistor, store } from './store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import CommunityPage from './pages/Community/community';
-import CommunityDetailPage from './pages/CommunityDetail/communitydetail';
-import axios from 'axios';
+import ArticlePage from './pages/Article/article';
+import ArticleDetailPage from './pages/ArticleDetail/articledetail';
+import QuestionPage from './pages/Question/question';
+import QuestionDetailPage from './pages/QuestionDetail/questiondetail';
+import MakeStar from './hoc/makestar/makestar';
+import NavBar from './components/navbar';
 import user from './store/userSlice';
 import StoveList from './pages/Stove/stove';
 import StoveDetail from './pages/StoveDetail/stovedetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.headers.common['Authorization'] = `Bearer ${user.access_token}`
+const styles = {
+  container: {
+    width: '100vw',
+    height: '100vh',
+    background: 'linear-gradient(rgba(28, 112, 185, 1), rgba(41, 37, 114, 1))',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    position: 'relative',
+    overflow: 'hidden'
+  }
+};
 root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <BrowserRouter>
         <React.StrictMode>
-          <Routes>
-            <Route path="/" element={<StartPage />} />
-            <Route path="signup" element={<SignupPage />} />
-            <Route path="start" element={<GameStart />} />
-            <Route path="basic" element={<BasicInfo />} />
-            <Route path="news" element={<InitNews />} />
-            <Route path="newsdetail" element={<NewsDetailPage />} />
-            <Route path="newstab" element={<NewsTab />} />
-            <Route path="investpage" element={<InvestPage />} />
-            <Route path="oauth/kakao/callback/" element={<KaKaoAuth />} />
-            <Route path="ranking" element={<RankingPage />} />
-            <Route path="community" element={<CommunityPage />} />
-            <Route path="community/:id" element={<CommunityDetailPage />} />
-            <Route path="stove" element={<StoveList />} />
-            <Route path="stovedetail" element={<StoveDetail />} />
-          </Routes>
+          <div style={styles.container}>
+            <MakeStar />
+            <Routes>
+              <Route path="/" element={<StartPage />} />
+              <Route path="signup" element={<SignupPage />} />
+              <Route path="start" element={<GameStart />} />
+              <Route path="basic" element={<BasicInfo />} />
+              <Route path="news" element={<InitNews />} />
+              <Route path="newsdetail" element={<NewsDetailPage />} />
+              <Route path="newstab" element={<NewsTab />} />
+              <Route path="investpage" element={<InvestPage />} />
+              <Route path="oauth/kakao/callback/" element={<KaKaoAuth />} />
+              <Route path="ranking" element={<RankingPage />} />
+              <Route path="article" element={<ArticlePage />} />
+              <Route path="article/:id" element={<ArticleDetailPage />} />
+              <Route path="question" element={<QuestionPage />} />
+              <Route path="question/:id" element={<QuestionDetailPage />} />
+              <Route path="stove" element={<StoveList />} />
+              <Route path="stovedetail" element={<StoveDetail />} />
+            </Routes>
+            <NavBar />
+          </div>
         </React.StrictMode>
       </BrowserRouter>
     </PersistGate>

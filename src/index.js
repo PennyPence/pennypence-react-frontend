@@ -25,7 +25,6 @@ import user from './store/userSlice';
 import StoveList from './pages/Stove/stove';
 import StoveDetail from './pages/StoveDetail/stovedetail';
 import axios from 'axios';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const styles = {
   container: {
@@ -45,10 +44,12 @@ axios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("Authorization");
     if (token) {
+      const state = store.getState();
+      const user = state.user
       config.headers.Authorization = token;
       config.data = {
         ...config.data,
-        user: user // 디폴트 값 설정
+        user: { id: user.id, email: user.email, nickname: user.nickname, profile_image: user.profile_image, money: user.money } // 디폴트 값 설정
       };
     }
 

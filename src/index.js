@@ -40,7 +40,26 @@ const styles = {
     overflow: 'hidden'
   }
 };
-axios.defaults.headers.common['Authorization'] = localStorage.getItem("Authorization")
+
+axios.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("Authorization");
+    if (token) {
+      config.headers.Authorization = token;
+      config.data = {
+        ...config.data,
+        user: user // 디폴트 값 설정
+      };
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// axios.defaults.headers.common['Authorization'] = localStorage.getItem("Authorization") 
 root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>

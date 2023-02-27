@@ -16,6 +16,10 @@ function QuestionPage() {
     const [type, setType] = useState("article");
     const postURL = `${backURL}/communities/question/`;
 
+    const handleArticleSubmitted = () => {
+        getArticle();
+        setIsModalOpen(false);
+    };
     const handleModalOpen = () => {
         setIsModalOpen(true);
         setType("article");
@@ -53,6 +57,7 @@ function QuestionPage() {
                         postURL={postURL}
                         isOpen={isModalOpen}
                         onRequestClose={handleModalClose}
+                        onArticleSubmitted={handleArticleSubmitted}
                     />
 
                 </div>

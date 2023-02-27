@@ -5,15 +5,18 @@ import style from "./modal.module.css";
 import { CSSTransition } from "react-transition-group";
 import user from "../store/userSlice";
 
-const ModalForm = ({ type, postURL, isOpen, onRequestClose }) => {
+const ModalForm = ({ type, postURL, isOpen, onRequestClose, onArticleSubmitted }) => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(postURL, { user, title, content });
+            const response = await axios.post(postURL, { title, content });
             console.log(response.data);
+            setTitle('');
+            setContent('');
+            onArticleSubmitted();
         } catch (error) {
             console.error(error);
         }
@@ -29,48 +32,37 @@ const ModalForm = ({ type, postURL, isOpen, onRequestClose }) => {
     };
 
     return (
-        <CSSTransition
-            in={isOpen}
-            timeout={300}
-            classNames={{
-                enter: style.modal_enter,
-                enterActive: style.modal_enter_active,
-                exit: style.modal_exit,
-                exitActive: style.modal_exit_active,
-            }}
-            unmountOnExit
+        <Modal
+            isOpen={isOpen}
+            onRequestClose={onRequestClose}
+            overlayClassName={`${style.modal_overlay} ${isOpen ? style.open : style.close}`}
+            className={`${style.modal} ${isOpen ? style.open : style.close}`}
+            ariaHideApp={false}
         >
-            <Modal
-                isOpen={isOpen}
-                onRequestClose={onRequestClose}
-                overlayClassName={style.modal_overlay}
-                className={style.modal}
-            >
-                <h2>{type === "article" ? "Create Article" : "Create Comment"}</h2>
-                <form onSubmit={handleSubmit}>
-                    {type === "article" && (
-                        <div>
-                            <label htmlFor="title">Title:</label>
-                            <input
-                                type="text"
-                                id="title"
-                                value={title}
-                                onChange={handleTitleChange}
-                            />
-                        </div>
-                    )}
+            <h2>{type === "article" ? "Create Article" : "Create Comment"}</h2>
+            <form onSubmit={handleSubmit}>
+                {type === "article" && (
                     <div>
-                        <label htmlFor="content">Content:</label>
-                        <textarea
-                            id="content"
-                            value={content}
-                            onChange={handleContentChange}
+                        <label htmlFor="title">Title:</label>
+                        <input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={handleTitleChange}
                         />
                     </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </Modal>
-        </CSSTransition>
+                )}
+                <div>
+                    <label htmlFor="content">Content:</label>
+                    <textarea
+                        id="content"
+                        value={content}
+                        onChange={handleContentChange}
+                    />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </Modal>
     );
 };
 

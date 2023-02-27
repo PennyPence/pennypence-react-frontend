@@ -24,6 +24,7 @@ import NavBar from './components/navbar';
 import user from './store/userSlice';
 import StoveList from './pages/Stove/stove';
 import StoveDetail from './pages/StoveDetail/stovedetail';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const styles = {
@@ -39,6 +40,7 @@ const styles = {
     overflow: 'hidden'
   }
 };
+axios.defaults.headers.common['Authorization'] = localStorage.getItem("Authorization")
 root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>

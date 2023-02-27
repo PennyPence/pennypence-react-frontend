@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import axios from "axios";
 import style from "./modal.module.css";
 import { CSSTransition } from "react-transition-group";
+import user from "../store/userSlice";
 
 const ModalForm = ({ type, postURL, isOpen, onRequestClose }) => {
     const [title, setTitle] = useState("");
@@ -11,7 +12,7 @@ const ModalForm = ({ type, postURL, isOpen, onRequestClose }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(postURL, { title, content });
+            const response = await axios.post(postURL, { user, title, content });
             console.log(response.data);
         } catch (error) {
             console.error(error);

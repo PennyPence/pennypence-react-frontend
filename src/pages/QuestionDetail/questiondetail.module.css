@@ -173,6 +173,7 @@
 .rank-page__body__others__reply {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 17px;
   /* font-weight: bold; */
   color: white;

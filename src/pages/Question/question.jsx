@@ -18,15 +18,8 @@ function QuestionPage() {
 
     const handleArticleSubmitted = () => {
         getArticle();
-        setIsModalOpen(false);
     };
-    const handleModalOpen = () => {
-        setIsModalOpen(true);
-        setType("article");
-    };
-    const handleModalClose = () => {
-        setIsModalOpen(false);
-    };
+
     const getArticle = async () => {
         const res = await axios({
             method: "get",
@@ -49,18 +42,12 @@ function QuestionPage() {
 
     return (
         <>
+            <ModalForm
+                type={type}
+                postURL={postURL}
+                onArticleSubmitted={handleArticleSubmitted}
+            />
             <div className={style[`rank-page__body__others`]}>
-                <div className={style[`rank-page__body__button__div`]}>
-                    <button onClick={handleModalOpen} className={style[`rank-page__body__button`]}>글 작성</button>
-                    <ModalForm
-                        type={type}
-                        postURL={postURL}
-                        isOpen={isModalOpen}
-                        onRequestClose={handleModalClose}
-                        onArticleSubmitted={handleArticleSubmitted}
-                    />
-
-                </div>
 
                 {articles ? (
                     <>

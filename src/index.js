@@ -25,6 +25,7 @@ import user from './store/userSlice';
 import StoveList from './pages/Stove/stove';
 import StoveDetail from './pages/StoveDetail/stovedetail';
 import axios from 'axios';
+import ItemSell from './pages/ItemSell/itemsell';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const styles = {
@@ -65,6 +66,7 @@ root.render(
               <Route path="question/:id" element={<QuestionDetailPage />} />
               <Route path="stove" element={<StoveList />} />
               <Route path="stovedetail" element={<StoveDetail />} />
+              <Route path="itemsell" element={<ItemSell />} />
             </Routes>
             <NavBar />
           </div>

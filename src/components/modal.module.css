@@ -15,7 +15,6 @@
   width: 20vw;
   text-decoration: none;
   text-shadow: 0px 1px 0px #283966;
-
 }
 
 .myButtonDiv {
@@ -24,4 +23,10 @@
   justify-content: end;
   margin-bottom: 5vw;
   z-index: 1;
+}
+
+.reply {
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
 }

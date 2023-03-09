@@ -1,6 +1,4 @@
 import style from "./newstab.module.css"
-import NavBar from "../../components/navbar"
-import MakeStar from "../../hoc/makestar/makestar"
 import { useState } from "react";
 import testImage from "../../assets/images/logo.png"
 
@@ -166,14 +164,12 @@ function NewsTab() {
     
     return (
         <section className={style[`newtab-page`]}>
-            <MakeStar />
             <ul className={style[`newtab-page__tabs`]}>
                 {tabContentList.map((section, index)=> {
                     return section.tabTitle
                 })}
             </ul>
             { tabContentList[activeIndex].tabContent}
-            <NavBar />
         </section>
     );
 }

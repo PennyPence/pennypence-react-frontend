@@ -27,6 +27,7 @@ import StoveDetail from './pages/StoveDetail/stovedetail';
 import axios from 'axios';
 import ItemSell from './pages/ItemSell/itemsell';
 import ItemStore from './pages/ItemStore/itemstore';
+import UserInfo from './pages/UserInfo/userinfo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const styles = {
@@ -90,6 +91,7 @@ root.render(
               <Route path="stovedetail" element={<StoveDetail />} />
               <Route path="itemsell" element={<ItemSell />} />
               <Route path="itemstore" element={<ItemStore />} />
+              <Route path="userinfo" element={<UserInfo />} />
             </Routes>
             <NavBar />
           </div>

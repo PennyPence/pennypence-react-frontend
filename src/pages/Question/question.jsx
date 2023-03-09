@@ -5,6 +5,7 @@ import NavBar from "../../components/navbar"
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ModalForm from "../../components/modal";
+import Topbar from "../../components/topbar";
 
 var backURL = process.env.REACT_APP_BACK_BASE_URL;
 
@@ -42,6 +43,7 @@ function QuestionPage() {
 
     return (
         <>
+            <Topbar pagename='질문게시판' />
             <ModalForm
                 type={type}
                 postURL={postURL}
@@ -55,7 +57,7 @@ function QuestionPage() {
                             const title = limitText(data.title, 9);
                             const nickname = limitText(data.user.nickname, 5);
                             return (
-                                <Link to={`/question/${data.id}?name=${data.title}`}
+                                <Link to={`/question/${data.id}?name=${title}`}
                                     className={style[`rank-page__body__others__form__info__money`]}>
                                     <span>{title}</span>
                                     <span className={style[`rank-page__body__others__form__info__money__nickname`]}>{nickname ? nickname : '익명'}</span>

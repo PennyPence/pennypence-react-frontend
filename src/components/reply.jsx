@@ -10,6 +10,7 @@ function Reply(props) {
     useEffect(() => {
         setReplies([]);
     }, [props.repliesCount]);
+
     const getReply = async () => {
         const res = await axios({
             method: "get",

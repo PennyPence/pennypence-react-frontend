@@ -8,6 +8,7 @@ import Reply from "../../components/reply";
 import anonymousIMG from "../../assets/images/anonymous.png"
 import { useSelector } from "react-redux";
 import HeartIcon from "../../components/heartIcon"
+import Topbar from "../../components/topbar";
 
 var backURL = process.env.REACT_APP_BACK_BASE_URL;
 
@@ -16,6 +17,7 @@ function QuestionDetailPage() {
     const [type, setType] = useState("comment");;
     const postURL = `${backURL}/communities/comments/`;
     let { id } = useParams();
+    const name = new URL(window.location.href).searchParams.get("name");
     const getArticle = async () => {
         const res = await axios({
             method: "get",
@@ -63,6 +65,7 @@ function QuestionDetailPage() {
 
     return (
         <>
+            <Topbar key='detail' pagename={name ? name : ''} />
             {article ? (
                 <main className={style[`rank-page__body`]}>
                     <div className={style[`rank-page__body__others`]}>
@@ -83,7 +86,7 @@ function QuestionDetailPage() {
                         </div>
                         <div className={style[`rank-page__body__others__reply`]}>
                             <span style={{ color: 'white' }}>
-                                {article.comments.length ? `${article.comments.length}개의 댓글` : '아직 댓글이 없어요.'}
+                                {article.comments.length ? `${article.comments.length}개의 댓글` : '아직 댓글이 없어요 😥'}
                             </span>
                             <ModalForm
                                 type={type}

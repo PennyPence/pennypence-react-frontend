@@ -24,16 +24,7 @@ function QuestionDetailPage() {
             url: `${backURL}/communities/question/${id}`,
         });
         setArticle(res.data);
-        console.log(res);
     };
-
-    const getLike = async () => {
-        const likeres = await axios({
-            method: "get",
-            url: `${backURL}/communities/likes_list/?question_id=${id}`
-        })
-        console.log(likeres)
-    }
 
     const handleArticleSubmitted = () => {
         getArticle();
@@ -42,7 +33,6 @@ function QuestionDetailPage() {
     const formattedDate = article ? moment(article.created_at).format('YYYY.MM.DD. HH:mm') : null;
     useEffect(() => {
         getArticle();
-        getLike();
     }, []);
 
     const detailDate = (a) => {
@@ -71,6 +61,13 @@ function QuestionDetailPage() {
                     <div className={style[`rank-page__body__others`]}>
                         <div className={style[`rank-page__body__others__form__info__title`]}>
                             <span>{article.title}</span>
+                        </div>
+                        <div style={{ color: 'white', display: 'flex', justifyContent: 'end' }}>
+                            <HeartIcon
+                                like_count={article.like_count}
+                                getURL={`${backURL}/communities/likes_list/?question_id=${article.id}`}
+                                postURL={`${backURL}/communities/question/${article.id}/like/`}
+                            />
                         </div>
                         <div className={style[`rank-page__body__others__div`]}>
                             <div className={style[`rank-page__body__others__form__info__id`]}>
@@ -112,6 +109,8 @@ function QuestionDetailPage() {
                                             <HeartIcon
                                                 id={comment.id}
                                                 like_count={comment.like_count}
+                                                getURL={`${backURL}/communities/likes_list/?comment_id=${comment.id}`}
+                                                postURL={`${backURL}/communities/comments/${comment.id}/like/`}
                                             />
                                             <ModalForm
                                                 type={"reply"}

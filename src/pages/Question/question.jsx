@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import style from "./question.module.css"
-import MakeStar from "../../hoc/makestar/makestar"
-import NavBar from "../../components/navbar"
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ModalForm from "../../components/modal";
@@ -13,7 +11,6 @@ var backURL = process.env.REACT_APP_BACK_BASE_URL;
 function QuestionPage() {
 
     const [articles, setArticles] = useState();
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [type, setType] = useState("article");
     const postURL = `${backURL}/communities/question/`;
 
@@ -27,7 +24,6 @@ function QuestionPage() {
             url: `${backURL}/communities/question/`,
         });
         setArticles(res.data);
-        console.log(res)
     };
 
     useEffect(() => {

@@ -28,6 +28,7 @@ import axios from 'axios';
 import ItemSell from './pages/ItemSell/itemsell';
 import ItemStore from './pages/ItemStore/itemstore';
 import UserInfo from './pages/UserInfo/userinfo';
+import EditInfo from './pages/EditInfo/editinfo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const styles = {
@@ -92,6 +93,7 @@ root.render(
               <Route path="itemsell" element={<ItemSell />} />
               <Route path="itemstore" element={<ItemStore />} />
               <Route path="userinfo" element={<UserInfo />} />
+              <Route path="editinfo" element={<EditInfo />} />
             </Routes>
             <NavBar />
           </div>

@@ -88,7 +88,7 @@ root.render(
               <Route path="question" element={<QuestionPage />} />
               <Route path="question/:id" element={<QuestionDetailPage />} />
               <Route path="stove" element={<StoveList />} />
-              <Route path="stovedetail" element={<StoveDetail />} />
+              <Route path="stove/:id" element={<StoveDetail />} />
               <Route path="itemsell" element={<ItemSell />} />
               <Route path="itemstore" element={<ItemStore />} />
               <Route path="userinfo" element={<UserInfo />} />

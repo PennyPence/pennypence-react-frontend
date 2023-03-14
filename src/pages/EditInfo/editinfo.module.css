@@ -1,0 +1,108 @@
+.edit__header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.edit__header__name {
+    font-size: 25px;
+    color: white;
+    padding-left: .5rem;
+}
+
+.edit__header__check {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.edit__header__check__input {
+    width: 65%;
+    height: 90%;
+    padding-left: .5rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border: none;
+
+}
+
+.edit__header__check__input:focus {
+    color: white;
+    outline: none;
+}
+
+.edit__header__check__button {
+    width: 25%;
+    height: 90%;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.edit__body {
+    width: 350px;
+    height: 600px;
+    z-index: 1;
+}
+
+.edit__body__image {
+    width: 350px;
+    height: 150px;
+    margin: .5rem 0;
+}
+
+.edit__body__school {
+    width: 350px;
+    height: 350px;
+}
+
+.edit__body__school__title {
+    font-size: 20px;
+    color: white;
+}
+
+.edit__body__school__search {
+    margin: .5rem 0;
+    position: relative;
+}
+
+.edit__body__school__search__input {
+    width: 95%;
+    padding: 1rem .5rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+}
+
+.edit__body__school__search__input:focus {
+    padding-left: .5rem;
+    outline: none;
+    color: white;
+}
+
+.edit__body__school__search__icon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 5%;
+    top: 25%;
+}
+
+.edit__body__school__list {
+    width: 330px;
+    height: 60%;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    padding: 1rem .5rem;
+    margin: 0;
+    border-radius: 10px;
+    flex-direction: column;
+    overflow-y: scroll;
+}

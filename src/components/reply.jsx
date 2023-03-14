@@ -3,6 +3,7 @@ import style from './reply.module.css'
 import axios from "axios";
 import anonymousIMG from "../assets/images/anonymous.png"
 
+var backURL = process.env.REACT_APP_BACK_BASE_URL;
 function Reply(props) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [replies, setReplies] = useState([]);
@@ -17,7 +18,6 @@ function Reply(props) {
             url: props.getURL,
         });
         setReplies(res.data);
-        console.log(res.data);
     };
     useEffect(() => {
         if (isExpanded && !replies.length) {
@@ -55,6 +55,8 @@ function Reply(props) {
                                             id={comment.id}
                                             like_count={comment.like_count}
                                             reply={1}
+                                            getURL={`${backURL}/communities/likes_list/?comment_id=${comment.id}`}
+                                            postURL={`${backURL}/communities/comments/${comment.id}/like/`}
                                             getReply={getReply}
                                         />
                                     </div>
